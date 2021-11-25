@@ -1,11 +1,11 @@
 import React from 'react'
-import Layout from '../components/Layout'
+import { CartContext } from '../lib/CartContext'
 
 const Index = () => {
     return (
-        <Layout>
+        <CartContext>
             <h1>Hello World</h1>
-        </Layout>
+        </CartContext>
     )
 }
 
