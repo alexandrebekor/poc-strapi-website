@@ -7,6 +7,7 @@ module.exports = {
                 queryLimit: 1000,
                 collectionTypes: [`category`, `product`]
             }
-        }
+        },
+        `gatsby-plugin-postcss`
     ]
 }

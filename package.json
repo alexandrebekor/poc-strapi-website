@@ -9,5 +9,11 @@
     "gatsby-source-strapi": "^1.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "gatsby-plugin-postcss": "^5.2.0",
+    "postcss": "^8.4.1",
+    "tailwindcss": "^2.2.19"
   }
 }
