@@ -13,15 +13,33 @@ exports.createPages = async ({ graphql, actions }) => {
                     }
                 }
             }
+            products: allStrapiProduct {
+                edges {
+                    node {
+                        strapiId,
+                        slug
+                    }
+                }
+            }
         }
     `)
 
-    data.categories.edges.map(category => {
+    data.categories.edges.forEach(category => {
         createPage({
             path: `/category/${category.node.slug}`,
             component: path.resolve(`src/templates/category.js`),
             context: {
                 id: category.node.strapiId
+            }
+        })
+    })
+
+    data.products.edges.forEach(product => {
+        createPage({
+            path: `/product/${product.node.slug}`,
+            component: path.resolve(`src/templates/product.js`),
+            context: {
+                id: product.node.strapiId
             }
         })
     })
