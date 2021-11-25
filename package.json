@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "dev": "gatsby develop",
+    "build": "gatsby build",
+    "start": "gatsby start"
+  },
+  "dependencies": {
+    "gatsby": "^4.2.0",
+    "gatsby-source-strapi": "^1.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
