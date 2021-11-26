@@ -2,6 +2,7 @@ import React from 'react'
 import { useCart } from '../lib/CartContext'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../components/Layout'
+import ButtonAddRemove from '../components/ButtonAddRemove'
 
 const Cart = () => {
     const { totalCart, cart, removeFromCart } = useCart()
@@ -21,9 +22,9 @@ const Cart = () => {
                                 <div className="flex flex-col justify-center">
                                     <h2 className="font-bold">{product.title}</h2>
                                     <p>{product.description}</p>
-                                    <p>{product.qty}</p>
-                                    <button onClick={() => removeFromCart(product)}>-</button>
+                                    <ButtonAddRemove product={product} />
                                     <button onClick={() => removeFromCart(product, true)}>Deletar</button>
+
                                 </div>
                             </article>
                         )

@@ -3,11 +3,9 @@ import Layout from '../components/Layout'
 import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Alert from '../components/Alert'
-import { useCart } from '../lib/CartContext'
+import ButtonAddRemove from '../components/ButtonAddRemove'
 
 const Category = ({ data }) => {
-    const cart = useCart()
-
     return (
         <Layout>
             <h2 className="text-2xl font-bold">{data.category.name}</h2>
@@ -27,7 +25,7 @@ const Category = ({ data }) => {
                             <Link to={`/product/${product.slug}`} >
                                 Saiba Mais...
                             </Link>
-                            <button onClick={() => cart.addToCart(product)}>Adicionar no Carrinho</button>
+                            <ButtonAddRemove product={product} />
                         </article>
                     )
                 })}

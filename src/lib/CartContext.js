@@ -33,7 +33,7 @@ export const CartProvider = ({ children }) => {
 
     const removeFromCart = (product, all) => {
         setCart(oldCart => {
-            if (!all && oldCart[product.slug].qty > 1) {
+            if (!all && oldCart[product.slug] && oldCart[product.slug].qty > 1) {
                 oldCart[product.slug].qty -= 1
             } else {
                 delete oldCart[product.slug]
@@ -52,8 +52,12 @@ export const CartProvider = ({ children }) => {
         .map(slug => cart[slug].qty)
         .reduce((prev, element) => prev + element, 0)
 
+    const inCart = product => {
+        return cart[product.slug] ? cart[product.slug].qty : 0
+    }
+
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, totalCart }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, totalCart, inCart }}>
             {children}
         </CartContext.Provider>
     )
