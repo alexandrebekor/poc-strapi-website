@@ -22,7 +22,8 @@ const Cart = () => {
                                     <h2 className="font-bold">{product.title}</h2>
                                     <p>{product.description}</p>
                                     <p>{product.qty}</p>
-                                    <button onClick={() => removeFromCart(product)}>Deletar</button>
+                                    <button onClick={() => removeFromCart(product)}>-</button>
+                                    <button onClick={() => removeFromCart(product, true)}>Deletar</button>
                                 </div>
                             </article>
                         )

@@ -31,9 +31,14 @@ export const CartProvider = ({ children }) => {
         })
     }
 
-    const removeFromCart = product => {
+    const removeFromCart = (product, all) => {
         setCart(oldCart => {
-            delete oldCart[product.slug]
+            if (!all && oldCart[product.slug].qty > 1) {
+                oldCart[product.slug].qty -= 1
+            } else {
+                delete oldCart[product.slug]
+            }
+
             const cart = {
                 ...oldCart
             }
