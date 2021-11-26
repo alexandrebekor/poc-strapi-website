@@ -37,6 +37,8 @@ export const pageQuery = graphql`
 query($id: Int!) {
   product: strapiProduct(strapiId: {eq: $id}) {
     title
+    slug
+    description
     image {
       localFile {
         childImageSharp {
